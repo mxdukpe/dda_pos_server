@@ -15,13 +15,16 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const uri = "mongodb+srv://<anaisasseakakpo>:<qcGs0na72XkZ6JbP>@ddacluster.vqzl5zz.mongodb.net/?retryWrites=true&w=majority&appName=ddacluster";
+
 // Connexion à MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('Connexion à MongoDB réussie'))
-.catch((error) => console.error('Erreur de connexion à MongoDB:', error));
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connexion à MongoDB réussie');
+  })
+  .catch((err) => {
+    console.error('Erreur de connexion à MongoDB:', err);
+  });
 
 // Définition du modèle de ticket
 const ticketSchema = new mongoose.Schema({
