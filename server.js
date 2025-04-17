@@ -15,7 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const uri = "mongodb+srv://<anaisasseakakpo>:<qcGs0na72XkZ6JbP>@ddacluster.vqzl5zz.mongodb.net/?retryWrites=true&w=majority&appName=ddacluster";
+const uri = "mongodb+srv://anaisasseakakpo:qcGs0na72XkZ6JbP@ddacluster.vqzl5zz.mongodb.net/?retryWrites=true&w=majority&appName=ddacluster";
 
 // Connexion à MongoDB
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
